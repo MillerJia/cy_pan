@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "qapplication": "cpp",
+        "qnetworkaccessmanager": "cpp",
+        "qnetworkreply": "cpp",
+        "functional": "cpp",
+        "new": "cpp"
+    }
+}
