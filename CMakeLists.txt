@@ -48,3 +48,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt6
 
 # 部署应用程序
 execute_process(COMMAND windeployqt.exe ${CMAKE_SOURCE_DIR}/build/cy_pan.exe)
+
+# 单元测试使用
+enable_testing()
+add_subdirectory(test)
