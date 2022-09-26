@@ -18,5 +18,5 @@ private:
     }
 
 protected:
-  QNetworkAccessManager* network_manager_;
+    QNetworkAccessManager* network_manager_;
 };

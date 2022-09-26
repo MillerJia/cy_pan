@@ -20,6 +20,7 @@ find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Network Widgets REQUIRED)
 include_directories(include/view/)
 include_directories(include/common/)
 include_directories(include/service/)
+include_directories(include/thirdparty/)
 include_directories(${PROJECT_BINARY_DIR})
 
 # 查找.ui文件的路径
@@ -29,9 +30,9 @@ set(CMAKE_AUTOUIC_SEARCH_PATHS
 
 FILE(GLOB_RECURSE QT_UI_LIST "resource/ui/*.ui")
 message(STATUS "QT_UI_LIST = ${QT_UI_LIST}")
-FILE(GLOB_RECURSE QT_HEADER_LIST "include/*.h")
+FILE(GLOB_RECURSE QT_HEADER_LIST CMAKE_CONFIGURE_DEPENDS "include/*.h")
 message(STATUS "QT_HEADER_LIST = ${QT_HEADER_LIST}")
-FILE(GLOB_RECURSE QT_SOURCE_LIST "src/*.cpp")
+FILE(GLOB_RECURSE QT_SOURCE_LIST CMAKE_CONFIGURE_DEPENDS "src/*.cpp")
 message(STATUS "QT_SOURCE_LIST =  ${QT_SOURCE_LIST}")
 
 set(PROJECT_SOURCES

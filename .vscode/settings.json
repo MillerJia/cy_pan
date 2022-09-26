@@ -4,6 +4,7 @@
         "qnetworkaccessmanager": "cpp",
         "qnetworkreply": "cpp",
         "functional": "cpp",
-        "new": "cpp"
+        "new": "cpp",
+        "qmainwindow": "cpp"
     }
 }
