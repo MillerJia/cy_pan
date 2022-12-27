@@ -1,7 +1,7 @@
 #include <QNetworkAccessManager>
 #include <QNetworkRequest>
 #include <QNetworkReply>
-#include "Service.h"
+#include "cypan/common/Service.h"
 #include <string>
 
 class BaseHttpService 

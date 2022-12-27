@@ -1,4 +1,4 @@
-#include "HttpService.h"
+#include <cypan/service/HttpService.h>
 
 void HttpService::Request(QUrl url, Callback callback, HTTP_SERVICE::HTTP_METHOD method, std::shared_ptr<json> data)
 {

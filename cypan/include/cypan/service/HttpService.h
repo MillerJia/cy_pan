@@ -1,5 +1,5 @@
-#include "baseHttpService.h"
-#include "common_interface.h"
+#include <cypan/service/baseHttpService.h>
+#include <cypan/common/common_interface.h>
 #include <functional>
 #include <QObject>
 

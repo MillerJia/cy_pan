@@ -1,7 +1,7 @@
 include(CTest)
 
 # set test build target name
-set(TEST_BINARY ${PROJECT_NAME}_test)
+set(TEST_BINARY cypan_test)
 message("test_binary = ${TEST_BINARY}")
 
 # add new test
@@ -22,4 +22,5 @@ add_test(test1 ${TEST_BINARY})
 # link libraries to use in this executable
 # link gtest_main to avoid your own main.cpp
 target_link_libraries(${TEST_BINARY} PUBLIC gtest)
+target_include_directories(${TEST_BINARY} PUBLIC ${PROJECT_SOURCE_DIR}/cypan/include)
 ### test_step_3 ### target_link_libraries(${TEST_BINARY}_2 PUBLIC gtest)

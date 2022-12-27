@@ -1,5 +1,5 @@
-#include "include/view/mainwindow.h"
-#include "common_interface.h"
+#include <cypan/view/mainwindow.h>
+#include <cypan/common/common_interface.h>
 #include "ui_mainwindow.h"
 #include <QDebug>
 

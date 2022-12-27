@@ -1,0 +1,45 @@
+# 关联UI文件，生成对应的头文件 如ui_mainwindow.h
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+
+set(TARGET_NAME cypan)
+
+find_package(Qt6 COMPONENTS Network Widgets REQUIRED)
+
+# 查找.ui文件的路径
+set(CMAKE_AUTOUIC_SEARCH_PATHS
+    ./resource/ui/
+)
+
+FILE(GLOB_RECURSE UI_LIST "resource/ui/*.ui")
+message(STATUS "UI_LIST = ${UI_LIST}")
+FILE(GLOB_RECURSE HEADER_LIST CMAKE_CONFIGURE_DEPENDS "include/*.h")
+message(STATUS "HEADER_LIST = ${HEADER_LIST}")
+FILE(GLOB_RECURSE SOURCE_LIST CMAKE_CONFIGURE_DEPENDS "src/*.cpp")
+message(STATUS "SOURCE_LIST =  ${SOURCE_LIST}")
+
+
+set(PROJECT_SOURCES
+    main.cpp
+)
+
+message("build target cypan")
+
+add_executable(${TARGET_NAME}
+    ${PROJECT_SOURCES}
+    ${UI_LIST}  # 这里需要手动把UI文件对应的文件 也放到这里
+    ${HEADER_LIST}
+    ${SOURCE_LIST} 
+)
+
+target_link_libraries(${TARGET_NAME} PRIVATE Qt6::Widgets Qt6::Network)
+target_include_directories(${TARGET_NAME} PUBLIC include include)
+
+message("target exe dir = ${CMAKE_SOURCE_DIR}/build/cypan.exe" )
+
+# 部署应用程序
+execute_process(COMMAND windeployqt.exe ${CMAKE_SOURCE_DIR}/build/cypan/cypan.exe)
+
+# 单元测试使用
+enable_testing()

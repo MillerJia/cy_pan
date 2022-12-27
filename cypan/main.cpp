@@ -1,4 +1,4 @@
-#include "include/view/mainwindow.h"
+#include "cypan/view/mainwindow.h"
 
 #include <QApplication>
 

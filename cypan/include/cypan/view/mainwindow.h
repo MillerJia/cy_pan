@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include <QPushButton>
 #include <QNetworkAccessManager>
-#include "HttpService.h"
+#include <cypan/service/HttpService.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
